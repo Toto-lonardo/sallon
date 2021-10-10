@@ -1,16 +1,23 @@
 import Head from "next/head";
+import { format, parseISO } from "date-fns";
+import { it } from "date-fns/locale";
 import { blogPost } from "../../lib/data";
 
 export default function BlogPage({ title, date, content }) {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div>
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        <h1>{title}</h1>
+        <div className="border-b-2 border-gray-200 mb-4 border-opacity-50 ">
+          <h2 className="text-2xl font-bold">{title}</h2>
+          <div className="text-gray-600 text-md mt-1">
+            {format(parseISO(date), "EE dd/MM/yyyy ", { locale: it })}
+          </div>
+        </div>
         <div>{content}</div>
       </main>
     </div>

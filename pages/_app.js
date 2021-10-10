@@ -6,7 +6,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <div className="mx-auto w-10/12 my-8">
       <header>
-        <h1 className="text-6xl font-bold text-center filter drop-shadow">
+        <h1 className="text-6xl font-bold text-center filter drop-shadow-xl">
           My Blog
         </h1>
         <nav className="my-4">
