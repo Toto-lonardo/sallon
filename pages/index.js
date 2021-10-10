@@ -1,5 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
+import { format, parseISO, add } from "date-fns";
+import { it } from "date-fns/locale";
 import { blogPost } from "../lib/data";
 
 export default function Home() {
@@ -29,7 +31,7 @@ function BlogListItem({ slug, title, date, content }) {
           <a className="text-lg font-medium">{title}</a>
         </Link>
       </div>
-      <div>{date.toString()}</div>
+      <div>{format(parseISO(date), "EE dd/MM/yyyy ", { locale: it })}</div>
       <div>{content}</div>
     </div>
   );
