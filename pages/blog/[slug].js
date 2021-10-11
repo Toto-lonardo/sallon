@@ -4,7 +4,6 @@ import { it } from "date-fns/locale";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import { getAllPosts } from "../../lib/data";
-import markcontent from "../../components/markcontent";
 
 export default function BlogPage({ title, date, content }) {
   return (
@@ -22,7 +21,7 @@ export default function BlogPage({ title, date, content }) {
           </div>
         </div>
         <div className="prose">
-          <MDXRemote {...content} components={markcontent} />
+          <MDXRemote {...content} />
         </div>
       </main>
     </div>
