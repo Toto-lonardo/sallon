@@ -1,7 +1,10 @@
 import Head from "next/head";
 import { format, parseISO } from "date-fns";
 import { it } from "date-fns/locale";
-import { blogPost } from "../../lib/data";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
+import { getAllPosts } from "../../lib/data";
+import markcontent from "../../components/markcontent";
 
 export default function BlogPage({ title, date, content }) {
   return (
@@ -18,25 +21,33 @@ export default function BlogPage({ title, date, content }) {
             {format(parseISO(date), "EE dd/MM/yyyy ", { locale: it })}
           </div>
         </div>
-        <div>{content}</div>
+        <div className="prose">
+          <MDXRemote {...content} components={markcontent} />
+        </div>
       </main>
     </div>
   );
 }
 
 export async function getStaticProps(context) {
-  console.log("hi!", context);
   const { params } = context;
+  const allPosts = getAllPosts();
+  const { data, content } = allPosts.find((item) => item.slug === params.slug);
+  const mdxSource = await serialize(content);
   return {
-    props: blogPost.find((item) => item.slug === params.slug), // will be passed to the page component as props
+    props: {
+      ...data,
+      date: data.date.toISOString(),
+      content: mdxSource,
+    },
   };
 }
 
 export async function getStaticPaths() {
   return {
-    paths: blogPost.map((item) => ({
+    paths: getAllPosts().map((post) => ({
       params: {
-        slug: item.slug,
+        slug: post.slug,
       },
     })),
     fallback: false,
