@@ -1,14 +1,14 @@
 import "../styles/globals.css";
-import {Montserrat} from '@next/font/google'
+import {Sono} from '@next/font/google'
 
 
-const  montserrat= Montserrat({
-  variable: '--font-montserrat',
+const sono= Sono({
+  variable: '--font-sono',
   subsets: ['latin'],
 })
 export default function MyApp({ Component, pageProps }) {
   return (
-    <main className={montserrat.variable}>
+    <main className={sono.variable}>
       <Component {...pageProps} />
     </main>
   );
