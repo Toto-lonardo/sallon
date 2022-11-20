@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
         <main className=" h-screen bg-sfondo flex flex-col items-center justify-center">
         <div className="container mx-auto ">
-          <Image src={profilo} width={"auto"} height={"auto"} alt={"Sallon alias Salvatore Lo Nardo"} className="rounded-full max-w-xs mx-auto border  border-celeste border-2 shadow-black/50 shadow-lg"  />
+          <Image src={profilo} width={"auto"} height={"auto"} alt={"Sallon alias Salvatore Lo Nardo"} className="rounded-full max-w-xs mx-auto border-celeste border-2 shadow-black/50 shadow-lg"  />
             <div className="flex flex-col items-center justify-items-center mt-4">
               <motion.h2 initial={{ opacity: 0, scale: 0.5 }}
     animate={{ opacity: 1, scale: 1, }}

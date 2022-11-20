@@ -8,7 +8,7 @@ const sono= Sono({
 })
 export default function MyApp({ Component, pageProps }) {
   return (
-    <main className={sono.variable}>
+    <main className={`${sono.variable} font-sans`}>
       <Component {...pageProps} />
     </main>
   );
