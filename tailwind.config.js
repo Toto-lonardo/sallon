@@ -11,8 +11,14 @@ module.exports = {
   theme: {
     extend: {
       fontFamily:{
-        sans: ['var(--font-montserrat)', ...fontFamily.sans],
+        sans: ['var(--font-sono)', ...fontFamily.sans],
       },
+      colors:{
+        sfondo:"#1A1B27",
+  celeste:"#5377B9",
+  giallo:"#DB7F4E",
+  verde:"#33AFAC"
+      }
     },
   },
   plugins: [],
