@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import {Sono} from '@next/font/google'
+import {Sono} from "next/font/google"
 
 
 const sono= Sono({
