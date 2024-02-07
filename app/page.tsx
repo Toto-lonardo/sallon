@@ -1,4 +1,4 @@
-import Head from "next/head";
+"use client";
 import { motion } from "framer-motion";
 // import AnimatedTextCharacter from "../components/AnimatedTextCharacter"
 import profilo from "../public/sallon.jpg";
@@ -7,18 +7,12 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Sallon </title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main className=" h-screen bg-sfondo flex flex-col items-center justify-center">
         <div className="container mx-auto ">
           <div className=" bg-sky-800 md:flex-row flex-col flex max-w-3xl shadow-celeste/40 shadow-xl rounded border-celeste border-4 mx-8 ">
             <div className=" basis-1/2">
               <Image
                 src={profilo}
-                width={"auto"}
-                height={"auto"}
                 alt={"Sallon alias Salvatore Lo Nardo"}
                 className="mx-auto "
               />
