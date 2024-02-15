@@ -10,7 +10,7 @@ import profilo2 from "../public/sallon2.jpg";
 
 export default function Immagine() {
   const [immagine, setImmagine] = useState(true);
-  function handleClick() {
+  function handleClick(event) {
     setImmagine(!immagine);
   }
   return (
