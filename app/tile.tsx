@@ -33,13 +33,13 @@ export default function Immagine() {
           whileTap={{ scale: 0.6 }}
           whileInView={{ opacity: 1 }}
           transition={{ type: "spring", stiffness: 100, damping: 12 }}
-          className="text-5xl text-verde antialiased text-font-sans tracking-tighter"
+          className="text-4xl md:text-5xl text-verde antialiased text-font-sans tracking-tighter"
           onClick={handleClick}
         >
           Sal<span className=" text-giallo ">lon</span>
         </motion.h2>
 
-        <p className="mt-1 text-verde text-xl tracking-tighter antialiased ">
+        <p className="mt-1 text-verde text-lg tracking-tighter antialiased ">
           Salvatore <span className="text-giallo">Lo Nardo</span>
         </p>
         <div className="tracking-tighter font-semibold text-slate-300">
