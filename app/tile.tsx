@@ -22,7 +22,7 @@ export default function Immagine() {
           className="mx-auto "
         />
       </div>
-      <div className="flex flex-col items-center justify-center  mx-auto flex-auto gap-2  basis-1/2 p-10">
+      <div className="flex flex-col items-center justify-center  mx-auto flex-auto gap-2  basis-1/2 p-5">
         <motion.h2
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
