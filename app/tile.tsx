@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
+import {
+  FaFileDownload,
+  FaGithub,
+  FaLinkedin,
+  FaTelegram,
+} from "react-icons/fa";
 import { ReactTyped } from "react-typed";
 import Image from "next/image";
 import profilo from "../public/sallon.jpg";
@@ -26,20 +31,16 @@ export default function Immagine() {
         <motion.h2
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
-          whileHover={{
-            scale: 1.2,
-            transition: { duration: 1, delay: 4 },
-          }}
           whileTap={{ scale: 0.6 }}
           whileInView={{ opacity: 1 }}
           transition={{ type: "spring", stiffness: 100, damping: 12 }}
-          className="text-5xl text-verde antialiased text-font-sans tracking-tighter"
+          className="text-4xl md:text-5xl text-verde antialiased text-font-sans tracking-tighter"
           onClick={handleClick}
         >
           Sal<span className=" text-giallo ">lon</span>
         </motion.h2>
 
-        <p className="mt-1 text-verde text-xl tracking-tighter antialiased ">
+        <p className="mt-1 text-verde text-lg tracking-tighter antialiased ">
           Salvatore <span className="text-giallo">Lo Nardo</span>
         </p>
         <div className="tracking-tighter font-semibold text-slate-300">
@@ -68,6 +69,16 @@ export default function Immagine() {
             </a>
             <a href="https://t.me/sallon87" target="_blank">
               <FaTelegram className="size-8" />
+            </a>
+          </div>
+          <div className=" mt-6 text-center text-slate-300">
+            <a
+              href="/Lo-Nardo-Salvatore-Frontend-developer.pdf"
+              target="_blank"
+              className="text-slate-300 gap-1 flex flex-row justify-center items-center"
+            >
+              <span>Curriculum Vitae</span>
+              <FaFileDownload className="size-4" />
             </a>
           </div>
         </div>

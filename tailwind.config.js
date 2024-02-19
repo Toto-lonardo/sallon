@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-sono)"],
+        sans: ["var(--custom-font-sono)"],
       },
       colors: {
         sfondo: "#1A1B27",
