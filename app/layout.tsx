@@ -4,7 +4,8 @@ import "../styles/globals.css";
 const sono = Sono({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-sono",
+  variable: "--custom-font-sono",
+  adjustFontFallback: false,
 });
 
 export default function RootLayout({
