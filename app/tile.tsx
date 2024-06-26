@@ -2,7 +2,12 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
+import {
+  FaFileDownload,
+  FaGithub,
+  FaLinkedin,
+  FaTelegram,
+} from "react-icons/fa";
 import { ReactTyped } from "react-typed";
 import Image from "next/image";
 import profilo from "../public/sallon.jpg";
@@ -64,6 +69,16 @@ export default function Immagine() {
             </a>
             <a href="https://t.me/sallon87" target="_blank">
               <FaTelegram className="size-8" />
+            </a>
+          </div>
+          <div className=" mt-6 text-center text-slate-300">
+            <a
+              href="https://rxresu.me/sallon/frontend-developer"
+              target="_blank"
+              className="text-slate-300 gap-1 flex flex-row justify-center items-center"
+            >
+              <span>Curriculum Vitae</span>
+              <FaFileDownload className="size-4" />
             </a>
           </div>
         </div>
