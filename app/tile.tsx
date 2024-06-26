@@ -73,7 +73,7 @@ export default function Immagine() {
           </div>
           <div className=" mt-6 text-center text-slate-300">
             <a
-              href="https://rxresu.me/sallon/frontend-developer"
+              href="/Lo-Nardo-Salvatore-Frontend-developer.pdf"
               target="_blank"
               className="text-slate-300 gap-1 flex flex-row justify-center items-center"
             >
