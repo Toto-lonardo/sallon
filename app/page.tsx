@@ -1,14 +1,29 @@
-import Tile from "./tile";
+import Navbar from "../components/Navbar";
+import GetInTouch from "./getintouch";
+import Home from "./home";
+import Portfolio from "./portfolio";
+import Tiles from "./tiles";
 
-export default function Home() {
+export default function Root() {
   return (
     <>
-      <main className=" min-h-dvh bg-sfondo flex flex-col items-center justify-center">
-        <div className="container mx-auto ">
-          <div className=" bg-sky-800 md:flex-row flex-col flex max-w-md md:max-w-3xl shadow-celeste/40 shadow-lg rounded border-celeste border-4 md:mx-auto m-6  ">
-            <Tile />
-          </div>
-        </div>
+      <main className=" min-h-dvh flex flex-col items-center justify-center gap-40 bg-sfondo">
+        <Navbar />
+        <Tiles>
+          <Home />
+        </Tiles>
+        <h3 className="text-3xl font-semibold uppercase text-arancione">
+          Portfolio
+        </h3>
+        <Tiles>
+          <Portfolio />
+        </Tiles>
+        <h3 className="text-3xl font-semibold uppercase text-arancione">
+          Contact me
+        </h3>
+        <Tiles>
+          <GetInTouch />
+        </Tiles>
       </main>
     </>
   );

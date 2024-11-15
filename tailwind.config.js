@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         sfondo: "#1A1B27",
         celeste: "#5377B9",
-        giallo: "#DB7F4E",
+        arancione: "#DB7F4E",
         verde: "#33AFAC",
       },
     },

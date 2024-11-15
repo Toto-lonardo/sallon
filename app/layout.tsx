@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${sono.variable}`}>
+    <html lang="en" className={`${sono.variable} sono`}>
       <body>{children}</body>
     </html>
   );
