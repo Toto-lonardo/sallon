@@ -55,57 +55,76 @@ const GetInTouch = () => {
     message: "",
   });
   return (
-    <div id="getintouch">
-      <form onSubmit={handleSubmit} className="">
-        <input
-          name="firstName"
-          type="text"
-          placeholder="Your name"
-          value={formData.firstName}
-          onChange={handleChange}
-          className=""
-          required
-        />
-        <input
-          name="lastName"
-          type="text"
-          placeholder="Your surname"
-          value={formData.lastName}
-          onChange={handleChange}
-          className=""
-          required
-        />
-        <input
-          name="email"
-          type="email"
-          placeholder="youremail@mail.com"
-          value={formData.email}
-          onChange={handleChange}
-          className=""
-          required
-        />
-        <input
-          name="subject"
-          type="text"
-          placeholder="Subject"
-          value={formData.subject}
-          onChange={handleChange}
-          className=""
-          required
-        />
-        <textarea
-          name="firstName"
-          cols={30}
-          rows={5}
-          placeholder="Type your message ..."
-          value={formData.message}
-          onChange={handleChange}
-          className=""
-          required
-        />
-        <button type="submit" className="" disabled={isSending}>
-          Send Message
-        </button>
+    <div id="getintouch" className="">
+      <form onSubmit={handleSubmit} className="p-4 ">
+        <div className="space-y-12">
+          <h2 className="text-base/7 font-semibold text-arancione">
+            Use this form for
+          </h2>
+          <p className="mt-1 text-sm/6 text-white"></p>
+          <label className="p-2 text-white ">Name</label>
+          <input
+            name="firstName"
+            type="text"
+            placeholder=""
+            value={formData.firstName}
+            onChange={handleChange}
+            className="m-4 rounded outline outline-1 outline-arancione focus:outline-4 text-zinc-700 bg-white "
+            required
+          />
+          <label className="p-2 text-white ">Surname</label>
+          <input
+            name="lastName"
+            type="text"
+            placeholder=""
+            value={formData.lastName}
+            onChange={handleChange}
+            className="m-4 rounded outline outline-1 outline-arancione focus:outline-4 text-zinc-700 bg-white "
+            required
+          />
+        </div>
+        <div className="space-y-12 pb-12">
+          <label className="p-2 text-white ">Email</label>
+          <input
+            name="email"
+            type="email"
+            placeholder="youremail@mail.com"
+            value={formData.email}
+            onChange={handleChange}
+            className="m-4 rounded outline outline-1 outline-arancione focus:outline-4 text-zinc-700 bg-white "
+            required
+          />
+          <label className="p-2 text-white ">Subject</label>
+          <input
+            name="subject"
+            type="text"
+            placeholder=""
+            value={formData.subject}
+            onChange={handleChange}
+            className="m-4 rounded outline outline-1 outline-arancione focus:outline-4 text-zinc-700 bg-white "
+            required
+          />
+        </div>
+        <div className="flex flex-col space-y-6 pb-12 ">
+          <label className="p-2 text-white ">Message</label>
+          <textarea
+            name="message"
+            cols={30}
+            rows={5}
+            placeholder="Type your message ..."
+            value={formData.message}
+            onChange={handleChange}
+            className="m-2 rounded outline outline-1 outline-arancione focus:outline-4 text-zinc-700 bg-white "
+            required
+          />
+          <button
+            type="submit"
+            className="text-white m-4 bg-arancione hover:bg-amber-600 font-bold py-2 px-4 rounded-full w-40 self-center "
+            disabled={isSending}
+          >
+            Send Message
+          </button>
+        </div>
       </form>
     </div>
   );
