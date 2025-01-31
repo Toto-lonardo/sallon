@@ -4,6 +4,17 @@ import { ContactEmailProps } from "./api/utils/mailInterface";
 
 const GetInTouch = () => {
   const [isSending, setIsSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [errore, setErrore] = useState<string | null>(null);
+
+  const [formData, setFormData] = useState<ContactEmailProps>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -38,30 +49,24 @@ const GetInTouch = () => {
           email: "",
           message: "",
         });
+        setSent(true);
       } else {
-        // TODO:
+        setErrore("Error, please try again");
       }
     } catch (error) {
+      setErrore("Failed to send email");
       console.log("Error sending email:", error);
     } finally {
       setIsSending(false);
     }
   };
-  const [formData, setFormData] = useState<ContactEmailProps>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
   return (
     <div id="getintouch" className="">
-      <form onSubmit={handleSubmit} className="p-4 ">
+      <h2 className="text-base/7 font-semibold text-arancione">
+        Use this form for
+      </h2>
+      <form onSubmit={handleSubmit}>
         <div className="space-y-12">
-          <h2 className="text-base/7 font-semibold text-arancione">
-            Use this form for
-          </h2>
-          <p className="mt-1 text-sm/6 text-white"></p>
           <label className="p-2 text-white ">Name</label>
           <input
             name="firstName"
@@ -83,7 +88,7 @@ const GetInTouch = () => {
             required
           />
         </div>
-        <div className="space-y-12 pb-12">
+        <div className="space-y-12">
           <label className="p-2 text-white ">Email</label>
           <input
             name="email"
@@ -91,7 +96,7 @@ const GetInTouch = () => {
             placeholder="youremail@mail.com"
             value={formData.email}
             onChange={handleChange}
-            className="m-4 rounded outline outline-1 outline-arancione focus:outline-4 text-zinc-700 bg-white "
+            className="m-4 rounded outline outline-1 outline-arancione focus:outline-4 text-zinc-700 bg-white"
             required
           />
           <label className="p-2 text-white ">Subject</label>
@@ -124,6 +129,12 @@ const GetInTouch = () => {
           >
             Send Message
           </button>
+          {errore && <div className="text-red-500 text-center">{errore}</div>}
+          {sent && (
+            <div className="text-arancione text-center">
+              Your message has been sent successfully! 🎉{" "}
+            </div>
+          )}
         </div>
       </form>
     </div>
