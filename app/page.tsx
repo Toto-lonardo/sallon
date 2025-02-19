@@ -1,3 +1,4 @@
+import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import GetInTouch from "./getintouch";
 import Home from "./home";
@@ -7,8 +8,8 @@ import Tiles from "./tiles";
 export default function Root() {
   return (
     <>
-      <main className=" min-h-dvh flex flex-col items-center justify-center gap-40 bg-sfondo">
-        <Navbar />
+      <main className=" flex flex-col items-center justify-center bg-sfondo gap-32">
+        <Header />
         <Tiles>
           <Home />
         </Tiles>

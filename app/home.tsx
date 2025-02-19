@@ -12,6 +12,7 @@ import { ReactTyped } from "react-typed";
 import Image from "next/image";
 import profilo from "../public/sallon.jpg";
 import profilo2 from "../public/sallon2.jpg";
+import Logo from "../components/Logo";
 
 export default function Home() {
   const [immagine, setImmagine] = useState(true);
@@ -38,8 +39,7 @@ export default function Home() {
           className="text-font-sans text-5xl tracking-wider antialiased md:text-5xl"
           onClick={handleClick}
         >
-          <span className="text-verde">Sal</span>
-          <span className=" text-arancione">lon</span>
+          <Logo />
         </motion.h2>
 
         <p className="mt-1 text-lg antialiased ">
