@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 767);
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 769);
