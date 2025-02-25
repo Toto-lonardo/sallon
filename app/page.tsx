@@ -8,7 +8,7 @@ import Tiles from "./tiles";
 export default function Root() {
   return (
     <>
-      <main className=" flex flex-col items-center justify-center bg-sfondo gap-32">
+      <main className="flex flex-col items-center justify-center bg-sfondo gap-32">
         <Header />
         <Tiles>
           <Home />
