@@ -5,10 +5,13 @@ import { useEffect, useState } from "react";
 
 export default function Navbar() {
   const [isNavbarOpen, setIsNavOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 769);
+      if (window.innerWidth < 769) {
+
+      setIsMobile(()=> true);
+      } else setIsMobile(()=> false) 
     };
 
     window.addEventListener("resize", handleResize);
@@ -22,14 +25,14 @@ export default function Navbar() {
     <nav aria-label="Main Navigation" className="text-verde">
       <div
         className={
-          !isMobile
-            ? "flex flex-col min-h-dvh md:min-h-min items-center md:justify-around z-50 md:z-0 justify-center"
-            : isNavbarOpen
+          isMobile
+            ? isNavbarOpen
             ? "flex flex-col min-h-dvh md:min-h-min items-center md:justify-around z-50 md:z-0 justify-center"
             : "hidden"
+            : "hidden md:flex flex-col min-h-dvh md:min-h-min items-md:justify-around z-10 md:z-0 justify-center"
         }
       >
-        <ul className=" font-bold uppercase text-3xl md:text-xl flex flex-col justify-center md:gap-12  gap-12 bg-sfondo md:flex-row ">
+        <ul className=" font-bold uppercase text-3xl md:text-xl flex flex-col items-start justify-start md:gap-12  gap-12 bg-sfondo md:flex-row ">
           <li className="transition-all hover:scale-110 hover:text-arancione ">
             <Link href="/">Home</Link>
           </li>
@@ -59,7 +62,7 @@ export default function Navbar() {
       {isNavbarOpen && (
         <div
           onClick={() => setIsNavOpen((prev) => !prev)}
-          className="absolute top-1 right-0 px-8 py-4 md:hidden"
+          className="absolute top-[2px] right-0 px-8 py-4 md:hidden"
         >
           <svg
             className="h-10 w-10 text-gray-600"
@@ -77,7 +80,7 @@ export default function Navbar() {
       )}
       {!isNavbarOpen && (
         <div
-          className="absolute top-1 right-0 px-8 py-7 space-y-2 md:hidden"
+          className="absolute top-[2px] right-0 px-8 py-7 space-y-2 md:hidden"
           onClick={() => setIsNavOpen((prev) => !prev)}
         >
           <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>

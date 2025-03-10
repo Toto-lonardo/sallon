@@ -15,16 +15,11 @@ export default function Portfolio() {
           />
         </div>
         <div className="mx-auto flex flex-auto flex-col items-center justify-center gap-1 p-6">
-          <motion.h2
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            whileTap={{ scale: 0.6 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ type: "spring", stiffness: 100, damping: 12 }}
+          <h2
             className="text-5xl antialiased md:text-5xl"
           >
             <span className="uppercase text-arancione">Marvelpedia</span>
-          </motion.h2>
+          </h2>
           <p className=" mt-4 text-white">
             Marvelpedia is an open-source project dedicated to one of my
             passions, the Marvel universe. This web app was created with the

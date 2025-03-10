@@ -21,7 +21,7 @@ export default function Home() {
   }
   return (
     <>
-      <div className="basis-1/2" id="home">
+      <div className="md:basis-1/2" id="home">
         <Image
           src={immagine ? profilo : profilo2}
           alt={"Sallon alias Salvatore Lo Nardo"}
