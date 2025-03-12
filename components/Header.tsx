@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 
 const ClientHeader = dynamic(()=> import('./Navbar'),
   {
-    ssr: false // disable ssr for use navbar only on client renderer
+    ssr: false // disable ssr for using navbar only on client renderer
   });
 const Header = () => {
   return (

@@ -92,9 +92,9 @@ export default function Navbar() {
           className="absolute top-[2px] right-0 px-8 py-7 space-y-2 md:hidden"
           onClick={() => setIsNavOpen((prev) => !prev)}
         >
-          <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-          <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
-          <span className="block h-0.5 w-8 animate-pulse bg-gray-600"></span>
+          <span className="block h-0.5 w-8 bg-gray-600"></span>
+          <span className="block h-0.5 w-8 bg-gray-600"></span>
+          <span className="block h-0.5 w-8 bg-gray-600"></span>
         </div>
       )}
     </nav>
