@@ -1,5 +1,7 @@
 import { Sono } from "next/font/google";
 import "../styles/globals.css";
+import Header from "../components/Header";
+import { Providers } from '../components/providers.js'
 
 const sono = Sono({
   subsets: ["latin"],
@@ -15,7 +17,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${sono.variable} sono`}>
-      <body>{children}</body>
+      <body className="bg-sfondo">
+        <Providers>
+        <Header />
+        <div className="mt-32">
+        {children}
+        </div>
+        </Providers>
+      </body>
     </html>
   );
 }

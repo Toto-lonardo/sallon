@@ -1,17 +1,26 @@
 "use client";
 
 import Link from "next/link";
+
 import { useEffect, useState } from "react";
+import { atom, useAtom } from "jotai";
+
+const navbarstate = atom(false)
+const mobilestate = atom( window.innerWidth < 769);
 
 export default function Navbar() {
-  const [isNavbarOpen, setIsNavOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isNavbarOpen, setIsNavOpen] = useAtom(navbarstate);
+  const [isMobile, setIsMobile] = useAtom(mobilestate);
+  console.log("mobilestate",mobilestate);
+  console.log("isMobile", isMobile);
+  console.log("navbarstate", navbarstate);
+  console.log("Navbaropen", isNavbarOpen)
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 769) {
+      if (window.innerWidth > 769) {
 
-      setIsMobile(()=> true);
-      } else setIsMobile(()=> false) 
+      setIsMobile(()=> false);
+      } else setIsMobile(()=> true) 
     };
 
     window.addEventListener("resize", handleResize);
@@ -34,16 +43,16 @@ export default function Navbar() {
       >
         <ul className=" font-bold uppercase text-3xl md:text-xl flex flex-col items-start justify-start md:gap-12  gap-12 bg-sfondo md:flex-row ">
           <li className="transition-all hover:scale-110 hover:text-arancione ">
-            <Link href="/">Home</Link>
+            <Link href="/" onClick={() => setIsNavOpen((prev) => !prev)}>Home</Link>
           </li>
           <li className="transition-all hover:scale-110 hover:text-arancione ">
-            <Link href="#aboutme" onClick={() => setIsNavOpen((prev) => !prev)}>
+            <Link href="/about" onClick={() => setIsNavOpen((prev) => !prev)}>
               About me
             </Link>
           </li>
           <li className="transition-all hover:scale-110 hover:text-arancione">
             <Link
-              href="#portfolio"
+              href="/portfolio"
               onClick={() => setIsNavOpen((prev) => !prev)}
             >
               Portfolio
@@ -51,7 +60,7 @@ export default function Navbar() {
           </li>
           <li className="transition-all hover:scale-110 hover:text-arancione">
             <Link
-              href="#getintouch"
+              href="/getintouch"
               onClick={() => setIsNavOpen((prev) => !prev)}
             >
               Get in Touch
