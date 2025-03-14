@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 import { useEffect, useState } from "react";
 import { atom, useAtom } from "jotai";
@@ -11,10 +12,28 @@ const mobilestate = atom( window.innerWidth < 769);
 export default function Navbar() {
   const [isNavbarOpen, setIsNavOpen] = useAtom(navbarstate);
   const [isMobile, setIsMobile] = useAtom(mobilestate);
-  console.log("mobilestate",mobilestate);
-  console.log("isMobile", isMobile);
-  console.log("navbarstate", navbarstate);
-  console.log("Navbaropen", isNavbarOpen)
+  
+  const pathname = usePathname();
+
+  const links = [
+{
+link: "Home",
+route: "/"
+},
+{
+link: "About me",
+route: "/about"
+},
+{
+link: "Portfolio",
+route: "/portfolio"
+},
+{
+link: "Get in touch",
+route: "/getintouch"
+}
+  ]
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 769) {
@@ -31,7 +50,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav aria-label="Main Navigation" className="text-verde">
+    <nav aria-label="Main Navigation" className="">
       <div
         className={
           isMobile
@@ -42,30 +61,13 @@ export default function Navbar() {
         }
       >
         <ul className=" font-bold uppercase text-3xl md:text-xl flex flex-col items-start justify-start md:gap-12  gap-12 bg-sfondo md:flex-row ">
-          <li className="transition-all hover:scale-110 hover:text-arancione ">
-            <Link href="/" onClick={() => setIsNavOpen((prev) => !prev)}>Home</Link>
-          </li>
-          <li className="transition-all hover:scale-110 hover:text-arancione ">
-            <Link href="/about" onClick={() => setIsNavOpen((prev) => !prev)}>
-              About me
+          {links.map((link) => (
+          <li className="transition-all hover:text-arancione  " key={link.link}>
+            <Link href={link.route} onClick={() => setIsNavOpen((prev) => !prev)} className={` ${pathname === link.route ? "text-arancione" : "text-verde"}`} >
+              {link.link}
             </Link>
           </li>
-          <li className="transition-all hover:scale-110 hover:text-arancione">
-            <Link
-              href="/portfolio"
-              onClick={() => setIsNavOpen((prev) => !prev)}
-            >
-              Portfolio
-            </Link>
-          </li>
-          <li className="transition-all hover:scale-110 hover:text-arancione">
-            <Link
-              href="/getintouch"
-              onClick={() => setIsNavOpen((prev) => !prev)}
-            >
-              Get in Touch
-            </Link>
-          </li>
+          ))}
         </ul>
       </div>
       {isNavbarOpen && (

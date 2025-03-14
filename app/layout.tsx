@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${sono.variable} sono`}>
+    <html lang="en" className={sono.className}>
       <body className="bg-sfondo">
         <Providers>
         <Header />
