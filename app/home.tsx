@@ -13,6 +13,7 @@ import Image from "next/image";
 import profilo from "../public/sallon.jpg";
 import profilo2 from "../public/sallon2.jpg";
 import Logo from "../components/Logo";
+import AnimatedTextCharacter from "../components/AnimatedTextCharacter";
 
 export default function Home() {
   const [immagine, setImmagine] = useState(true);
@@ -48,18 +49,19 @@ export default function Home() {
           <span className="mx-0.5 text-arancione">Nardo</span>
         </p>
         <div className="mt-8 text-slate-300">
-          <div className="flex h-6 w-56 items-center justify-center">
-            <ReactTyped
-              strings={[
-                "Proud Linux lover",
-                "Extremely Vim addicted",
-                "Frontend Web Developer",
-              ]}
-              typeSpeed={40}
-              backSpeed={30}
-              cursorChar=""
-              className="font-light"
-            />
+          <div className="flex h-6 w-56 items-center justify-center text-verde">
+            {/* <ReactTyped */}
+            {/*   strings={[ */}
+            {/*     "Proud Linux lover", */}
+            {/*     "Extremely Vim addicted", */}
+            {/*     "Frontend Web Developer", */}
+            {/*   ]} */}
+            {/*   typeSpeed={40} */}
+            {/*   backSpeed={30} */}
+            {/*   cursorChar="" */}
+            {/*   className="font-light" */}
+            {/* /> */}
+            <AnimatedTextCharacter text={"Proud Linux Lover"} />
           </div>
           <div className="my-4 flex items-center justify-center gap-6 ">
             <a href="https://github.com/Toto-lonardo" target="_blank">

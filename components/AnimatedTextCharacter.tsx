@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 
 const AnimatedTextCharacter = ({ text }: { text: string}) => {
   const letters = Array.from(text);
-
+// TODO Change animation 
   const container = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.03, delayChildren: 0.04 * i },
+      transition: { staggerChildren: 0.06, delayChildren: 0.06 * i },
     }),
   };
 
@@ -36,7 +36,7 @@ const AnimatedTextCharacter = ({ text }: { text: string}) => {
 
   return (
     <motion.div
-      className=" text-celeste flex text-3xl overflow-hidden"
+      className=" text-verde flex text-3xl overflow-hidden"
       variants={container}
       initial="hidden"
       animate="visible"

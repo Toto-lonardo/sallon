@@ -34,7 +34,9 @@ route: "/getintouch"
 }
   ]
 
-  useEffect(() => {
+
+
+useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 769) {
 
@@ -47,7 +49,7 @@ route: "/getintouch"
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [setIsMobile]);
 
   return (
     <nav aria-label="Main Navigation" className="">
