@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const AnimatedTextCharacter = ({ text }: { text: string}) => {
   const letters = Array.from(text);
-// TODO Change animation 
+// TODO: Change animation 
   const container = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
