@@ -1,8 +1,8 @@
 import { Sono } from "next/font/google";
 import "../styles/globals.css";
 import Header from "../components/Header";
-import { Providers } from '../components/providers.js'
-
+import { Providers } from "../components/providers.js";
+import Container from "../components/Container";
 const sono = Sono({
   subsets: ["latin"],
   display: "swap",
@@ -17,14 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={sono.className}>
-      <body className="bg-sfondo">
-        <Providers>
-        <Header />
-        <div className="mt-32">
-        {children}
-        </div>
-        </Providers>
-      </body>
+      <Providers>
+        <Container>
+          <Header />
+          <div className="mt-32">{children}</div>
+        </Container>
+      </Providers>
     </html>
   );
 }
